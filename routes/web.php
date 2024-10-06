@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoodCodeBadCodeController;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/test', [TestController::class, 'index']);
+
+Route::prefix('good_code_bad_code')->group(function() {
+    Route::get('/section_3', [GoodCodeBadCodeController::class, 'section3']);
 });
