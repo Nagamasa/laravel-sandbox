@@ -23,4 +23,5 @@ Route::get('/test', [TestController::class, 'index']);
 
 Route::prefix('good_code_bad_code')->group(function() {
     Route::get('/section_3', [GoodCodeBadCodeController::class, 'section3']);
+    Route::get('/section_4', [GoodCodeBadCodeController::class, 'section4']);
 });
